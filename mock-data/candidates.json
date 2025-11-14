@@ -1,0 +1,384 @@
+{
+  "candidates": [
+    {
+      "id": 1,
+      "name": "Jana Patton",
+      "position": "Jr. Product Manager",
+      "company": "Software Alliance Corp.",
+      "job_title": "Digital Marketing Specialist (O26)",
+      "job_id": "job-123",
+      "status": "Application Review",
+      "status_type": "stage",
+      "last_activity": "2024-01-15T10:30:00Z",
+      "action_link": "Collect Feedback",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "LinkedIn"
+    },
+    {
+      "id": 2,
+      "name": "Zona Cohen",
+      "position": "Senior Software Engineer",
+      "company": "Gonzaga Enterprises",
+      "job_title": "Digital Marketing Specialist (O26)",
+      "job_id": "job-123",
+      "status": "Former Manager",
+      "status_type": "role",
+      "last_activity": "2024-01-14T15:45:00Z",
+      "action_link": "Collect Feedback",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "Referral"
+    },
+    {
+      "id": 3,
+      "name": "Allan Peterson",
+      "position": "Director of an investment portfolio inc.",
+      "company": "Leestown Investment Portfolio Inc.",
+      "job_title": "Digital Marketing Specialist (O26)",
+      "job_id": "job-123",
+      "status": "Application Review",
+      "status_type": "stage",
+      "last_activity": "2024-01-13T09:15:00Z",
+      "action_link": "Collect Feedback",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "Career Page"
+    },
+    {
+      "id": 4,
+      "name": "Randy Beebe",
+      "position": "Marketing Manager",
+      "company": "Riverwood Holding Inc.",
+      "job_title": "Digital Marketing Specialist (O26)",
+      "job_id": "job-123",
+      "status": "Application Review",
+      "status_type": "stage",
+      "last_activity": "2024-01-12T14:20:00Z",
+      "action_link": "Collect Feedback",
+      "has_availability": true,
+      "availability_status": "Not Requested",
+      "has_interviews": true,
+      "interviews": [
+        {
+          "name": "Cultural Add Interview",
+          "scheduled": false
+        },
+        {
+          "name": "Peer Panel Interview",
+          "scheduled": false
+        },
+        {
+          "name": "Case Study",
+          "scheduled": false
+        },
+        {
+          "name": "Executive Interview",
+          "scheduled": false
+        }
+      ],
+      "application_type": "active",
+      "source": "Indeed"
+    },
+    {
+      "id": 5,
+      "name": "Luann Stevens",
+      "position": "Development Manager at Pristine Service Enterprise",
+      "company": "Pristine Service Enterprise",
+      "job_title": "Digital Marketing Specialist (O26)",
+      "job_id": "job-123",
+      "status": "Application Review",
+      "status_type": "stage",
+      "last_activity": "2024-01-11T11:00:00Z",
+      "action_link": "Collect Feedback",
+      "has_availability": true,
+      "availability_status": "Not Requested",
+      "has_interviews": true,
+      "interviews": [
+        {
+          "name": "Behavioral Phone Interview",
+          "scheduled": false
+        }
+      ],
+      "application_type": "active",
+      "source": "LinkedIn"
+    },
+    {
+      "id": 6,
+      "name": "Michael Chen",
+      "position": "Senior Product Designer",
+      "company": "TechVision Labs",
+      "job_title": "Senior Product Designer",
+      "job_id": "job-456",
+      "status": "Phone Screen",
+      "status_type": "stage",
+      "last_activity": "2024-01-10T16:30:00Z",
+      "action_link": "Schedule Interview",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "Dribbble"
+    },
+    {
+      "id": 7,
+      "name": "Sarah Johnson",
+      "position": "Frontend Developer",
+      "company": "Digital Innovations Inc.",
+      "job_title": "Frontend Engineer (React)",
+      "job_id": "job-789",
+      "status": "Take Home Test",
+      "status_type": "stage",
+      "last_activity": "2024-01-09T13:45:00Z",
+      "action_link": "Review Submission",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "GitHub"
+    },
+    {
+      "id": 8,
+      "name": "David Martinez",
+      "position": "Data Scientist",
+      "company": "Analytics Pro",
+      "job_title": "Senior Data Scientist",
+      "job_id": "job-234",
+      "status": "Onsite Interview",
+      "status_type": "stage",
+      "last_activity": "2024-01-08T10:00:00Z",
+      "action_link": "Collect Feedback",
+      "has_availability": true,
+      "availability_status": "Available",
+      "has_interviews": true,
+      "interviews": [
+        {
+          "name": "Technical Interview",
+          "scheduled": true
+        },
+        {
+          "name": "Team Fit Interview",
+          "scheduled": false
+        }
+      ],
+      "application_type": "active",
+      "source": "Kaggle"
+    },
+    {
+      "id": 9,
+      "name": "Emily Rodriguez",
+      "position": "UX Researcher",
+      "company": "UserFirst Design",
+      "job_title": "UX Researcher",
+      "job_id": "job-567",
+      "status": "Offer",
+      "status_type": "stage",
+      "last_activity": "2024-01-07T14:15:00Z",
+      "action_link": "Send Offer",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "Referral"
+    },
+    {
+      "id": 10,
+      "name": "James Wilson",
+      "position": "Backend Engineer",
+      "company": "CloudScale Systems",
+      "job_title": "Senior Backend Engineer",
+      "job_id": "job-890",
+      "status": "Application Review",
+      "status_type": "stage",
+      "last_activity": "2024-01-06T09:30:00Z",
+      "action_link": "Review Resume",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "Stack Overflow"
+    },
+    {
+      "id": 11,
+      "name": "Lisa Anderson",
+      "position": "Marketing Director",
+      "company": "Brand Builders Co.",
+      "job_title": "Director of Marketing",
+      "job_id": "job-345",
+      "status": "Rejected",
+      "status_type": "stage",
+      "last_activity": "2024-01-05T11:20:00Z",
+      "action_link": "View Profile",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "archived",
+      "source": "LinkedIn"
+    },
+    {
+      "id": 12,
+      "name": "Robert Taylor",
+      "position": "DevOps Engineer",
+      "company": "Infrastructure Pros",
+      "job_title": "Senior DevOps Engineer",
+      "job_id": "job-678",
+      "status": "Phone Screen",
+      "status_type": "stage",
+      "last_activity": "2024-01-04T15:00:00Z",
+      "action_link": "Schedule Phone Screen",
+      "has_availability": true,
+      "availability_status": "Requested",
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "Career Page"
+    },
+    {
+      "id": 13,
+      "name": "Jennifer Lee",
+      "position": "Content Strategist",
+      "company": "Content Masters",
+      "job_title": "Senior Content Strategist",
+      "job_id": "job-901",
+      "status": "Interview",
+      "status_type": "stage",
+      "last_activity": "2024-01-03T10:45:00Z",
+      "action_link": "Collect Feedback",
+      "has_availability": true,
+      "availability_status": "Available",
+      "has_interviews": true,
+      "interviews": [
+        {
+          "name": "Portfolio Review",
+          "scheduled": true
+        },
+        {
+          "name": "Writing Exercise",
+          "scheduled": false
+        }
+      ],
+      "application_type": "active",
+      "source": "Medium"
+    },
+    {
+      "id": 14,
+      "name": "Christopher Brown",
+      "position": "Sales Manager",
+      "company": "Revenue Growth Inc.",
+      "job_title": "Enterprise Sales Manager",
+      "job_id": "job-123",
+      "status": "Application Review",
+      "status_type": "stage",
+      "last_activity": "2024-01-02T13:30:00Z",
+      "action_link": "Review Application",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "LinkedIn"
+    },
+    {
+      "id": 15,
+      "name": "Amanda White",
+      "position": "HR Business Partner",
+      "company": "People First Corp.",
+      "job_title": "Senior HRBP",
+      "job_id": "job-456",
+      "status": "Reference Check",
+      "status_type": "stage",
+      "last_activity": "2024-01-01T09:00:00Z",
+      "action_link": "Request References",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "Indeed"
+    },
+    {
+      "id": 16,
+      "name": "Daniel Garcia",
+      "position": "Machine Learning Engineer",
+      "company": "AI Innovations",
+      "job_title": "ML Engineer",
+      "job_id": "job-789",
+      "status": "Take Home Test",
+      "status_type": "stage",
+      "last_activity": "2023-12-31T16:20:00Z",
+      "action_link": "Send Test",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "ArXiv"
+    },
+    {
+      "id": 17,
+      "name": "Michelle Thomas",
+      "position": "Customer Success Manager",
+      "company": "Client Care Solutions",
+      "job_title": "Senior CSM",
+      "job_id": "job-234",
+      "status": "Interview",
+      "status_type": "stage",
+      "last_activity": "2023-12-30T12:15:00Z",
+      "action_link": "Schedule Final Interview",
+      "has_availability": true,
+      "availability_status": "Available",
+      "has_interviews": true,
+      "interviews": [
+        {
+          "name": "Manager Interview",
+          "scheduled": true
+        },
+        {
+          "name": "Executive Interview",
+          "scheduled": false
+        }
+      ],
+      "application_type": "active",
+      "source": "Referral"
+    },
+    {
+      "id": 18,
+      "name": "Kevin Moore",
+      "position": "iOS Developer",
+      "company": "Mobile Apps Inc.",
+      "job_title": "Senior iOS Developer",
+      "job_id": "job-567",
+      "status": "Application Review",
+      "status_type": "stage",
+      "last_activity": "2023-12-29T14:40:00Z",
+      "action_link": "Review Portfolio",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "Apple Developer"
+    },
+    {
+      "id": 19,
+      "name": "Nicole Jackson",
+      "position": "Financial Analyst",
+      "company": "Finance Experts LLC",
+      "job_title": "Senior Financial Analyst",
+      "job_id": "job-890",
+      "status": "Phone Screen",
+      "status_type": "stage",
+      "last_activity": "2023-12-28T10:30:00Z",
+      "action_link": "Schedule Call",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "LinkedIn"
+    },
+    {
+      "id": 20,
+      "name": "Brian Harris",
+      "position": "Security Engineer",
+      "company": "CyberSafe Systems",
+      "job_title": "Senior Security Engineer",
+      "job_id": "job-345",
+      "status": "Offer Extended",
+      "status_type": "stage",
+      "last_activity": "2023-12-27T15:50:00Z",
+      "action_link": "Follow Up",
+      "has_availability": false,
+      "has_interviews": false,
+      "application_type": "active",
+      "source": "HackerOne"
+    }
+  ]
+}
