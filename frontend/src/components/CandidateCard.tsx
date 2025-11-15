@@ -1,4 +1,4 @@
-import type { Candidate } from '../types/candidate';
+import type { Candidate } from "../types/candidate";
 
 interface CandidateCardProps {
   candidate: Candidate;
@@ -11,13 +11,7 @@ export const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
       <div className="grid grid-cols-[345px_1fr] py-5">
         {/* Left Column - Name & Position */}
         <div className="px-5">
-          <a
-            href="#"
-            className="text-xl text-primary hover:underline"
-            onClick={(e) => e.preventDefault()}
-          >
-            {candidate.name}
-          </a>
+          <p className="text-xl text-[#15372c] ">{candidate.name}</p>
           <p className="text-base text-gray-600 mt-1">{candidate.position}</p>
           {candidate.company && (
             <p className="text-base text-gray-600">{candidate.company}</p>
@@ -29,7 +23,7 @@ export const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
           <p className="text-sm text-gray-900 mt-1">{candidate.job_title}</p>
           <a
             href="#"
-            className="text-sm text-primary hover:underline inline-block mt-1"
+            className="text-sm text-[#10B981] hover:underline inline-block mt-1"
             onClick={(e) => e.preventDefault()}
           >
             {candidate.action_link}
@@ -45,7 +39,7 @@ export const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
         <div className="px-4">
           <a
             href="#"
-            className="text-sm text-primary hover:underline"
+            className="text-sm text-[#10B981] hover:underline"
             onClick={(e) => e.preventDefault()}
           >
             {candidate.action_link}
@@ -64,7 +58,7 @@ export const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
             </span>
             <a
               href="#"
-              className="text-sm text-primary hover:underline"
+              className="text-sm text-[#10B981] hover:underline"
               onClick={(e) => e.preventDefault()}
             >
               Request Availability
@@ -79,7 +73,9 @@ export const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
           <div className="grid grid-cols-[345px_1fr] py-2.5 border-t border-gray-200">
             <div className="px-5" />
             <div className="px-4">
-              <span className="text-sm font-medium text-gray-700">Interviews</span>
+              <span className="text-sm font-medium text-gray-700">
+                Interviews
+              </span>
             </div>
           </div>
           {candidate.interviews.map((interview, idx) => (
@@ -93,7 +89,7 @@ export const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
               <div className="px-4 flex items-center gap-2">
                 <a
                   href="#"
-                  className="text-sm text-primary hover:underline"
+                  className="text-sm text-[#10B981] hover:underline"
                   onClick={(e) => e.preventDefault()}
                 >
                   Schedule manually
@@ -101,14 +97,18 @@ export const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
                 <span className="text-gray-400">|</span>
                 <a
                   href="#"
-                  className="text-sm text-primary hover:underline"
+                  className="text-sm text-[#10B981] hover:underline"
                   onClick={(e) => e.preventDefault()}
                 >
                   Automated scheduling
                 </a>
                 <span className="text-gray-400">|</span>
                 <button className="text-gray-400 hover:text-gray-600">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 6">
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 16 6"
+                  >
                     <circle cx="3" cy="3" r="1.5" />
                     <circle cx="8" cy="3" r="1.5" />
                     <circle cx="13" cy="3" r="1.5" />
