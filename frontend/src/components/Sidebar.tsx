@@ -3,6 +3,7 @@ import { SearchInput } from "./SearchInput";
 import { CollapsibleSection } from "./CollapsibleSection";
 
 type MultiSelectFilterKey = "application_type" | "source";
+type SortOption = "activity_desc" | "activity_asc" | "name_asc" | "name_desc";
 
 interface SidebarProps {
   searchValue: string;
@@ -12,6 +13,8 @@ interface SidebarProps {
     source: string[];
     job_id: string | null;
   };
+  sortBy?: SortOption;
+  onSortChange?: (sort: SortOption) => void;
   onFilterChange: (
     key: MultiSelectFilterKey,
     value: string,
@@ -25,11 +28,30 @@ export const Sidebar: React.FC<SidebarProps> = ({
   searchValue,
   onSearchChange,
   filters,
+  sortBy = "activity_desc",
+  onSortChange,
   onFilterChange,
   onJobFilterChange,
   onResetFilters,
 }) => {
   const [fullTextSearch, setFullTextSearch] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const sortOptions: Array<{ label: string; value: SortOption }> = [
+    { label: "Last Activity (new to old)", value: "activity_desc" },
+    { label: "Last Activity (old to new)", value: "activity_asc" },
+    { label: "Name (A-Z)", value: "name_asc" },
+    { label: "Name (Z-A)", value: "name_desc" },
+  ];
+
+  const currentSortLabel =
+    sortOptions.find((opt) => opt.value === sortBy)?.label ||
+    "Last Activity (new to old)";
+
+  const handleSortChange = (value: SortOption) => {
+    onSortChange?.(value);
+    setIsDropdownOpen(false);
+  };
   const applicationTypeOptions = [
     { label: "Active", value: "active" },
     { label: "Archived", value: "archived" },
@@ -94,12 +116,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </p>
       </div>
 
-      {/* Sort Dropdown (visual only) */}
-      <div className="mt-4">
-        <div className="w-full h-[36px] px-3 flex items-center justify-between border border-[#e1e1e1] bg-white rounded text-[14px] text-[#333333]">
-          <span className="truncate">Last Activity (new to old)</span>
+      {/* Sort Dropdown */}
+      <div className="mt-4 relative">
+        <button
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          className="w-full h-[36px] px-3 flex items-center justify-between border border-[#e1e1e1] bg-white rounded text-[14px] text-[#333333] hover:bg-[#f9f9f9] transition-colors"
+        >
+          <span className="truncate">{currentSortLabel}</span>
           <svg
-            className="w-3.5 h-3.5 text-[#909090] flex-shrink-0"
+            className={`w-3.5 h-3.5 text-[#909090] shrink-0 transition-transform ${
+              isDropdownOpen ? "rotate-180" : ""
+            }`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -111,7 +138,26 @@ export const Sidebar: React.FC<SidebarProps> = ({
               d="M19 9l-7 7-7-7"
             />
           </svg>
-        </div>
+        </button>
+
+        {/* Dropdown Menu */}
+        {isDropdownOpen && (
+          <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#e1e1e1] rounded shadow-lg z-10">
+            {sortOptions.map((option) => (
+              <button
+                key={option.value}
+                onClick={() => handleSortChange(option.value)}
+                className={`w-full text-left px-3 py-2 text-[14px] hover:bg-[#f0f0f0] transition-colors first:rounded-t last:rounded-b ${
+                  sortBy === option.value
+                    ? "bg-[#e8f5f1] text-[#047957] font-medium"
+                    : "text-[#333333]"
+                }`}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Filter Sections */}

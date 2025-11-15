@@ -5,6 +5,8 @@ import { CandidateCard } from "./components/CandidateCard";
 import { Pagination } from "./components/Pagination";
 import type { Candidate } from "./types/candidate";
 
+type SortOption = "activity_desc" | "activity_asc" | "name_asc" | "name_desc";
+
 type CandidateFilters = {
   application_type: string[];
   source: string[];
@@ -17,6 +19,7 @@ function App() {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [totalPages, setTotalPages] = useState(1);
   const [total, setTotal] = useState(0);
+  const [sortBy, setSortBy] = useState<SortOption>("activity_desc");
   const [filters, setFilters] = useState<CandidateFilters>({
     application_type: [],
     source: [],
@@ -33,9 +36,16 @@ function App() {
       setError(null);
 
       try {
+        // Parse sort option into sort_by and sort_order
+        const sortParts = sortBy.split("_");
+        const sortBy_param = sortParts[0]; // "activity" or "name"
+        const sortOrder_param = sortParts[1]; // "asc" or "desc"
+
         const params = new URLSearchParams({
           page: currentPage.toString(),
           per_page: "5",
+          sort_by: sortBy_param,
+          sort_order: sortOrder_param,
         });
 
         if (searchValue) {
@@ -81,7 +91,7 @@ function App() {
     fetchCandidates();
 
     return () => controller.abort();
-  }, [currentPage, searchValue, filters]);
+  }, [currentPage, searchValue, filters, sortBy]);
 
   const handleSearchChange = (value: string) => {
     setSearchValue(value);
@@ -143,6 +153,8 @@ function App() {
           searchValue={searchValue}
           onSearchChange={handleSearchChange}
           filters={filters}
+          sortBy={sortBy}
+          onSortChange={setSortBy}
           onFilterChange={handleFilterChange}
           onJobFilterChange={handleJobFilterChange}
           onResetFilters={handleResetFilters}
