@@ -58,82 +58,83 @@ def get_candidates(
     candidates = load_candidates()
 
     # =============================================================================
-    # TODO: Implement filtering logic
+    # Filtering logic
     # =============================================================================
-    # Filter 1: Search filter (name, position, company)
-    # if search:
-    #     search_lower = search.lower()
-    #     candidates = [c for c in candidates
-    #                   if search_lower in c['name'].lower() or
-    #                      search_lower in c['position'].lower() or
-    #                      search_lower in c['company'].lower()]
+    if search:
+        search_lower = search.lower()
+        candidates = [
+            c
+            for c in candidates
+            if search_lower in c["name"].lower()
+            or search_lower in c["position"].lower()
+            or search_lower in c["company"].lower()
+        ]
 
-    # Filter 2: Application type filter
-    # HINT: application_type can be a list like ['active', 'archived']
-    # if application_type:
-    #     candidates = [c for c in candidates
-    #                   if c['application_type'] in application_type]
+    if application_type:
+        allowed_types = {value.lower() for value in application_type}
+        candidates = [
+            c
+            for c in candidates
+            if c.get("application_type", "").lower() in allowed_types
+        ]
 
-    # Filter 3: Source filter
-    # HINT: Similar to application_type, filter by source field
-    # if source:
-    #     candidates = [c for c in candidates
-    #                   if c['source'] in source]
+    if source:
+        allowed_sources = {value.lower() for value in source}
+        candidates = [
+            c
+            for c in candidates
+            if c.get("source", "").lower() in allowed_sources
+        ]
 
-    # Filter 4: Job ID filter
-    # HINT: Filter by exact job_id match
-    # if job_id:
-    #     candidates = [c for c in candidates
-    #                   if c['job_id'] == job_id]
-
-    # =============================================================================
-    # TODO: Implement sorting logic
-    # =============================================================================
-    # Sort by the specified field and order
-    # HINT: Use Python's sorted() function with a key and reverse parameter
-    #
-    # Example for sorting by last_activity:
-    # if sort_by == 'last_activity':
-    #     candidates = sorted(
-    #         candidates,
-    #         key=lambda x: x['last_activity'],
-    #         reverse=(sort_order == 'desc')
-    #     )
-    # elif sort_by == 'name':
-    #     candidates = sorted(
-    #         candidates,
-    #         key=lambda x: x['name'].lower(),
-    #         reverse=(sort_order == 'desc')
-    #     )
+    if job_id:
+        candidates = [c for c in candidates if c.get("job_id") == job_id]
 
     # =============================================================================
-    # TODO: Implement pagination logic
+    # Sorting logic
     # =============================================================================
-    # Calculate pagination indices and slice the data
-    # HINT:
-    # total = len(candidates)  # After filtering!
-    # start_idx = (page - 1) * per_page
-    # end_idx = start_idx + per_page
-    # paginated_candidates = candidates[start_idx:end_idx]
-    # total_pages = (total + per_page - 1) // per_page  # Ceiling division
+    normalized_sort_by = (sort_by or "last_activity").lower()
+    normalized_sort_order = (sort_order or "desc").lower()
+
+    if normalized_sort_by not in {"last_activity", "name"}:
+        normalized_sort_by = "last_activity"
+
+    if normalized_sort_order not in {"asc", "desc"}:
+        normalized_sort_order = "desc"
+
+    reverse = normalized_sort_order == "desc"
+
+    if normalized_sort_by == "name":
+        candidates = sorted(
+            candidates,
+            key=lambda x: x["name"].lower(),
+            reverse=reverse,
+        )
+    else:  # default to last_activity
+        candidates = sorted(
+            candidates,
+            key=lambda x: x["last_activity"],
+            reverse=reverse,
+        )
 
     # =============================================================================
-    # TODO: Return properly formatted response
+    # Pagination logic & response formatting
     # =============================================================================
-    # Your response should include:
-    # - candidates: The paginated list
-    # - total: Total count after filtering
-    # - page: Current page number
-    # - per_page: Items per page
-    # - total_pages: Total number of pages
+    total = len(candidates)
+    total_pages = (total + per_page - 1) // per_page if total > 0 else 0
 
-    # PLACEHOLDER - Replace with your implementation
+    start_idx = (page - 1) * per_page
+    end_idx = start_idx + per_page
+    if total == 0 or start_idx >= total:
+        paginated_candidates = []
+    else:
+        paginated_candidates = candidates[start_idx:end_idx]
+
     return {
-        "candidates": candidates[:per_page],  # TODO: Use paginated_candidates
-        "total": len(candidates),
+        "candidates": paginated_candidates,
+        "total": total,
         "page": page,
         "per_page": per_page,
-        "total_pages": (len(candidates) + per_page - 1) // per_page
+        "total_pages": total_pages,
     }
 
 
